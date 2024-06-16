@@ -1,0 +1,37 @@
+.form-Container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.Info-Form {
+  width: 50%;
+  margin-top: 30px;
+}
+.css-zow5z4-MuiGrid-root > .MuiGrid-item {
+  padding-top: 15px !important;
+}
+
+.select-employee {
+  max-width: 380px;
+}
+.buttonGroup {
+  display: flex;
+  justify-content: end;
+
+  div Button:first-child {
+    margin-right: 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Info-Form {
+    width: 100% !important;
+    margin-top: 5px;
+  }
+  .buttonGroup {
+    padding-right: 10px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+}
