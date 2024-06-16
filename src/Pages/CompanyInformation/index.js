@@ -41,7 +41,7 @@ const CompanyInfo = () => {
 
   const formik = useFormik({
     initialValues: secondFormData,
-    companyInfoSchema,
+    validationSchema:companyInfoSchema,
     onSubmit: (values) => {
       dispatch(setSecondFormData(values));
       navigate('/plan-selection');

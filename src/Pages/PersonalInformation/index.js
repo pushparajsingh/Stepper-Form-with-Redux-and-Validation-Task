@@ -34,7 +34,7 @@ const PersonalInformation = () => {
 
   const formik = useFormik({
     initialValues: firstFormData,
-    PISchema,
+    validationSchema: PISchema,
     onSubmit: (values) => {
       dispatch(setFirstFormData(values));
       navigate('/CompanyInfo');

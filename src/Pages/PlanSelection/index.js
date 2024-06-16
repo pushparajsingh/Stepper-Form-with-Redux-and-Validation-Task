@@ -47,7 +47,7 @@ const PlanSelection = () => {
 
   const formik = useFormik({
     initialValues: thirdFormData,
-    planSelectSchema,
+    validationSchema: planSelectSchema,
     onSubmit: (values) => {
       const price =
         plans[values.planType.split('_')[0]][
