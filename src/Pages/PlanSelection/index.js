@@ -19,11 +19,9 @@ import {
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { useNavigate } from 'react-router-dom';
 import { planSelectSchema } from '../../Utilis/validationSchema';
 
-const PlanSelection = () => {
-  const navigate = useNavigate();
+const PlanSelection = ({ StepperForm }) => {
   const dispatch = useDispatch();
   const thirdFormData = useSelector((state) => state.form.thirdForm);
   const [numUsers, setNumUsers] = useState(
@@ -196,7 +194,7 @@ const PlanSelection = () => {
               <Button
                 color="secondary"
                 variant="contained"
-                onClick={() => navigate('/CompanyInfo')}
+                onClick={() => StepperForm('CompanyInfo')}
               >
                 Previous
               </Button>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFirstFormData } from '../../Redux/formSlice';
@@ -16,8 +15,7 @@ import {
   FormHelperText,
 } from '@mui/material';
 
-const PersonalInformation = () => {
-  const navigate = useNavigate();
+const PersonalInformation = ({ StepperForm }) => {
   const dispatch = useDispatch();
   const firstFormData = useSelector((state) => state.form.firstForm);
   const formSuccessfully = () =>
@@ -37,7 +35,7 @@ const PersonalInformation = () => {
     validationSchema: PISchema,
     onSubmit: (values) => {
       dispatch(setFirstFormData(values));
-      navigate('/CompanyInfo');
+      StepperForm('CompanyInfo');
       formSuccessfully();
     },
   });

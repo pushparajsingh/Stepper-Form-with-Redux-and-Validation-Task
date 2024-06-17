@@ -7,7 +7,7 @@
 }
 .Info-Form {
   width: 50%;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 .css-zow5z4-MuiGrid-root > .MuiGrid-item {
   padding-top: 15px !important;
@@ -19,9 +19,42 @@
 .buttonGroup {
   display: flex;
   justify-content: end;
-
   div Button:first-child {
     margin-right: 10px;
+  }
+}
+.grop-progressCircle {
+  display: flex;
+  justify-content: space-between;
+  width: 35%;
+  margin: 10px auto 0px auto;
+  position: relative;
+  hr {
+    position: absolute;
+    top: 6px;
+    z-index: 0;
+    height: 1px;
+    width: 98%;
+    background: 2px solid red;
+    background-color: rgb(221, 220, 220);
+  }
+  .progressCircle {
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgb(195, 195, 195);
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    z-index: 2;
+    h5 {
+      white-space: nowrap;
+      position: absolute;
+      top: 14px;
+      color: gray;
+    }
   }
 }
 @media screen and (max-width: 600px) {
@@ -33,5 +66,9 @@
     padding-right: 10px;
     margin-top: 20px;
     justify-content: center;
+  }
+  .grop-progressCircle {
+    width: 80%;
+    padding-bottom: 10px;
   }
 }

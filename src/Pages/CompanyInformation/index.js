@@ -1,11 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSecondFormData } from '../../Redux/formSlice';
 import { toast } from 'react-toastify';
 import { companyInfoSchema } from '../../Utilis/validationSchema';
-
 import {
   Grid,
   FormControl,
@@ -21,8 +19,7 @@ import {
   InputLabel,
 } from '@mui/material';
 
-const CompanyInfo = () => {
-  const navigate = useNavigate();
+const CompanyInfo = ({ StepperForm }) => {
   const dispatch = useDispatch();
   const secondFormData = useSelector(
     (state) => state.form.secondForm
@@ -41,10 +38,10 @@ const CompanyInfo = () => {
 
   const formik = useFormik({
     initialValues: secondFormData,
-    validationSchema:companyInfoSchema,
+    validationSchema: companyInfoSchema,
     onSubmit: (values) => {
       dispatch(setSecondFormData(values));
-      navigate('/plan-selection');
+      StepperForm('/PlanSelection');
       formSuccessfully();
     },
   });
@@ -172,7 +169,7 @@ const CompanyInfo = () => {
               color="secondary"
               variant="contained"
               fullWidth
-              onClick={() => navigate('/')}
+              onClick={() => StepperForm('PersonalInfo')}
             >
               Previous
             </Button>
